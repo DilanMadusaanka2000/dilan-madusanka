@@ -8,11 +8,16 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
-    alert("Message sent successfully (Check console)!");
+
+    // Temporarily display success message
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 3000);
+
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -75,8 +80,9 @@ const Contact = () => {
                   <input
                     type="text" id="name" required
                     value={formData.name} onChange={handleChange}
-                    className="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all"
-                    placeholder="John Snow"
+                    disabled={showSuccess}
+                    className="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    placeholder="your name"
                   />
                 </div>
                 <div>
@@ -84,8 +90,9 @@ const Contact = () => {
                   <input
                     type="email" id="email" required
                     value={formData.email} onChange={handleChange}
-                    className="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all"
-                    placeholder="john@example.com"
+                    disabled={showSuccess}
+                    className="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    placeholder="youemail@example.com"
                   />
                 </div>
               </div>
@@ -94,7 +101,8 @@ const Contact = () => {
                 <input
                   type="text" id="subject" required
                   value={formData.subject} onChange={handleChange}
-                  className="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all"
+                  disabled={showSuccess}
+                  className="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Project Inquiry"
                 />
               </div>
@@ -103,16 +111,23 @@ const Contact = () => {
                 <textarea
                   id="message" rows="4" required
                   value={formData.message} onChange={handleChange}
-                  className="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
+                  disabled={showSuccess}
+                  className="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary outline-none transition-all resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Tell me about your project..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-5 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-3 transition-all hover:-translate-y-1"
+                disabled={showSuccess}
+                className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-5 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-3 transition-all hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
                 Send Message <Send size={20} />
               </button>
+              {showSuccess && (
+                <div className="text-emerald-600 dark:text-emerald-400 font-bold text-center mt-4">
+                  Applied successfully!
+                </div>
+              )}
             </form>
           </div>
 
