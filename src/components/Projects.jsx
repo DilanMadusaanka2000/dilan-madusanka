@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Layers } from 'lucide-react';
+import { Github, Layers } from 'lucide-react';
 
 const Projects = () => {
   const navigate = useNavigate();
