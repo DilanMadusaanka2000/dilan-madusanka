@@ -22,7 +22,7 @@ const Hero = () => {
             Building <span className="text-primary italic">scalable</span> digital experiences.
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg">
-            I’m Dilan Madusanka, an aspiring Intern Software Engineer with a strong foundation in both frontend and backend development. Passionate about building efficient, scalable applications and continuously improving my technical skills while contributing to real-world software projects.
+            I’m Dilan Madusanka, an aspiring Trainee Software Engineer with a strong foundation in both frontend and backend development. Passionate about building efficient, scalable applications and continuously improving my technical skills while contributing to real-world software projects.
           </p>
           
           <div className="flex flex-wrap gap-4">

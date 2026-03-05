@@ -10,10 +10,28 @@ const Experience = () => {
     {
       id: 0,
       company: "DigitalBee Labs",
-      role: "Software Engineer Intern",
-      period: "2025 April - 2026 March",
-      description: "Completed a Software Engineering Internship with hands-on experience in modern web technologies and mentoring junior developers in software engineering best practices.",
-      skills: ["Laravel", "ASP.NET", "FastAPI", "Next.js", "React", "Vue.js", "JavaScript", "Software Development"],
+      roles: [
+        {
+          title: "Trainee Software Engineer",
+          period: "Oct 2025 - Present",
+        },
+        {
+          title: "Software Engineer Intern",
+          period: "Apr 2025 - Oct 2025",
+        }
+      ],
+      description:
+        "Completed a Software Engineering Internship and continued as a Trainee Software Engineer, working on full-stack applications and gaining hands-on experience with modern web technologies.",
+      skills: [
+        "Laravel",
+        "ASP.NET",
+        "FastAPI",
+        "Next.js",
+        "React",
+        "Vue.js",
+        "JavaScript",
+        "Software Development"
+      ],
     }
   ];
 
@@ -36,37 +54,52 @@ const Experience = () => {
               className="group"
             >
               <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:border-primary/30">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                  <div className="flex-1 space-y-3">
-                    <div className="flex items-center gap-3">
-                      <Calendar size={18} className="text-primary" />
-                      <span className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
-                        {exp.period}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-                      {exp.role}
-                    </h3>
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                  
+                  <div className="flex-1 space-y-4">
 
-                    <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-                      <Briefcase size={16} />
-                      <span className="font-medium">{exp.company}</span>
+                    {/* Company */}
+                    <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                      <Briefcase size={18} />
+                      <span className="font-semibold text-lg">{exp.company}</span>
                     </div>
 
+                    {/* Roles */}
+                    {exp.roles.map((role, i) => (
+                      <div key={i} className="space-y-1 border-l-2 border-primary pl-4">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                          {role.title}
+                        </h3>
+
+                        <div className="flex items-center gap-2">
+                          <Calendar size={16} className="text-primary" />
+                          <span className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+                            {role.period}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+
+                    {/* Description */}
                     <p className="text-slate-600 dark:text-slate-300 leading-relaxed pt-2">
                       {exp.description}
                     </p>
 
+                    {/* Skills */}
                     <div className="flex flex-wrap gap-2 pt-2">
-                      {exp.skills.map(skill => (
-                        <span key={skill} className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-lg">
+                      {exp.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-lg"
+                        >
                           {skill}
                         </span>
                       ))}
                     </div>
+
                   </div>
 
+                  {/* Button */}
                   <button
                     onClick={() => navigate(`/experience/${exp.id}`)}
                     className="md:ml-6 md:flex-shrink-0 px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 justify-center md:justify-start h-fit whitespace-nowrap group-hover:gap-3"
@@ -74,6 +107,7 @@ const Experience = () => {
                     <span>View Details</span>
                     <ArrowRight size={18} />
                   </button>
+
                 </div>
               </div>
             </motion.div>
