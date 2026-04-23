@@ -12,8 +12,12 @@ const Experience = () => {
       company: "DigitalBee Labs",
       roles: [
         {
+          title: "Software Engineer Consultant",
+          period: "Apr 2026 - Present",
+        },
+        {
           title: "Trainee Software Engineer",
-          period: "Oct 2025 - Present",
+          period: "Oct 2025 - Apr 2026",
         },
         {
           title: "Software Engineer Intern",
@@ -21,7 +25,7 @@ const Experience = () => {
         }
       ],
       description:
-        "Completed a Software Engineering Internship and continued as a Trainee Software Engineer, working on full-stack applications and gaining hands-on experience with modern web technologies.",
+        "Worked on building scalable full-stack applications, including multi-tenant SaaS systems, real-time features, and API-driven architectures using ASP.NET Core, FastAPI, Laravel and modern JavaScript frameworks. Contributed to full-stack development, system design, and performance optimization in production-level applications.",
       skills: [
         "Laravel",
         "ASP.NET",
@@ -100,13 +104,13 @@ const Experience = () => {
                   </div>
 
                   {/* Button */}
-                  <button
+                  {/* <button
                     onClick={() => navigate(`/experience/${exp.id}`)}
                     className="md:ml-6 md:flex-shrink-0 px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 flex items-center gap-2 justify-center md:justify-start h-fit whitespace-nowrap group-hover:gap-3"
                   >
                     <span>View Details</span>
                     <ArrowRight size={18} />
-                  </button>
+                  </button> */}
 
                 </div>
               </div>

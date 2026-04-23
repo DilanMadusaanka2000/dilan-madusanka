@@ -22,8 +22,7 @@ const Hero = () => {
             Building <span className="text-primary italic">scalable</span> digital experiences.
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg">
-            I’m Dilan Madusanka, an aspiring Trainee Software Engineer with a strong foundation in both frontend and backend development. Passionate about building efficient, scalable applications and continuously improving my technical skills while contributing to real-world software projects.
-          </p>
+            I’m Dilan Madusanka, a Software Engineer with hands-on experience in full-stack development, specializing in ASP.NET Core, Laravel, FastAPI, and modern JavaScript frameworks like Next.js. I have worked on multi-tenant SaaS platforms, real-time systems, and AI-integrated applications, focusing on performance, scalability, and clean architecture. I’m passionate about solving complex backend challenges and building efficient, production-ready systems.          </p>
           
           <div className="flex flex-wrap gap-4">
             <a 
@@ -32,13 +31,13 @@ const Hero = () => {
             >
               Let's Talk <ArrowRight size={20} />
             </a>
-            <a 
+            {/* <a 
               href="/TMDMadusanka CV.pdf" 
               download="TMDMadusanka CV.pdf"
               className="flex items-center gap-2 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 px-8 py-4 rounded-xl font-bold transition-all"
             >
               Resume <Download size={20} />
-            </a>
+            </a> */}
           </div>
 
           <div className="flex gap-6 mt-12 text-slate-500">
