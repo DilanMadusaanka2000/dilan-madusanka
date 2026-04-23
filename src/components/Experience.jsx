@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Briefcase, Calendar } from 'lucide-react';
 //ArrowRight
 const Experience = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const experiences = [
     {
