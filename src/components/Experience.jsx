@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, ArrowRight } from 'lucide-react';
-
+import { Briefcase, Calendar } from 'lucide-react';
+//ArrowRight
 const Experience = () => {
   const navigate = useNavigate();
 
