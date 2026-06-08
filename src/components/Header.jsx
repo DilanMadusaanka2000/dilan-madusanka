@@ -24,7 +24,14 @@ const Header = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
+        <a
+          href="#home"
+          className={`text-2xl font-bold transition-colors ${
+            isScrolled
+              ? 'bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent'
+              : 'text-white'
+          }`}
+        >
           DILAN.DEV
         </a>
 
@@ -34,7 +41,11 @@ const Header = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled
+                  ? 'hover:text-primary'
+                  : 'text-slate-300 hover:text-white'
+              }`}
             >
               {link.name}
             </a>
@@ -58,7 +69,10 @@ const Header = () => {
               className="w-full h-full object-contain"
             />
           </div>
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={isScrolled ? '' : 'text-white'}
+          >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>

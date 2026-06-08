@@ -1,75 +1,186 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin } from 'lucide-react';
-//Download
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { ArrowRight, Github, Linkedin, ChevronDown } from 'lucide-react';
+import AntigravityField from './AntigravityField';
+
+const SOCIAL_LINKS = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/dilan-madusanka-694714219/',
+    icon: Linkedin,
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/DilanMadusaanka2000',
+    icon: Github,
+  },
+];
+
 const Hero = () => {
+  const heroRef = useRef(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const smoothX = useSpring(mouseX, { stiffness: 80, damping: 25 });
+  const smoothY = useSpring(mouseY, { stiffness: 80, damping: 25 });
+
+  const glowX = useTransform(smoothX, [-1, 1], ['30%', '70%']);
+  const glowY = useTransform(smoothY, [-1, 1], ['25%', '75%']);
+  const glowBackground = useTransform(
+    [glowX, glowY],
+    ([x, y]) =>
+      `radial-gradient(700px circle at ${x} ${y}, rgba(61, 86, 230, 0.18), transparent 70%)`
+  );
+  const nameY = useTransform(smoothY, [-1, 1], [-6, 6]);
+
+  const handleMouseMove = (e) => {
+    const bounds = heroRef.current?.getBoundingClientRect();
+    if (!bounds) return;
+    mouseX.set(((e.clientX - bounds.left) / bounds.width - 0.5) * 2);
+    mouseY.set(((e.clientY - bounds.top) / bounds.height - 0.5) * 2);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Decorative Circles */}
-      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-primary-light/10 rounded-full blur-3xl" />
+    <section
+      id="home"
+      ref={heroRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#060d1f]"
+    >
+      <AntigravityField containerRef={heroRef} />
 
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: glowBackground }}
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1d82]/40 via-transparent to-[#060d1f] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center pt-24 pb-16">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="max-w-4xl w-full flex flex-col items-center"
         >
-          <span className="inline-block py-1 px-3 mb-4 rounded-full bg-primary/10 text-primary font-semibold text-sm">
-            Available for new Opportunities
-          </span>
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-            Building <span className="text-primary italic">scalable</span> digital experiences.
-          </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg">
-            I’m Dilan Madusanka, a Software Engineer with hands-on experience in full-stack development, specializing in ASP.NET Core, Laravel, FastAPI, and modern JavaScript frameworks like Next.js. I have worked on multi-tenant SaaS platforms, real-time systems, and AI-integrated applications, focusing on performance, scalability, and clean architecture. I’m passionate about solving complex backend challenges and building efficient, production-ready systems.          </p>
-          
-          <div className="flex flex-wrap gap-4">
-            <a 
-              href="#contact" 
-              className="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-bold transition-all transform hover:-translate-y-1"
-            >
-              Let's Talk <ArrowRight size={20} />
-            </a>
-            {/* <a 
-              href="/TMDMadusanka CV.pdf" 
-              download="TMDMadusanka CV.pdf"
-              className="flex items-center gap-2 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 px-8 py-4 rounded-xl font-bold transition-all"
-            >
-              Resume <Download size={20} />
-            </a> */}
-          </div>
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 mb-10 rounded-full border border-white/10 bg-white/5 text-blue-200 text-xs font-semibold uppercase tracking-[0.2em] backdrop-blur-sm"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Available for Opportunities
+          </motion.span>
 
-          <div className="flex gap-6 mt-12 text-slate-500">
-            <a href="https://www.linkedin.com/in/dilan-madusanka-694714219/" className="hover:text-primary transition-colors"><Github /></a>
-            <a href="https://github.com/DilanMadusaanka2000" className="hover:text-primary transition-colors"><Linkedin /></a>
-          </div>
+          <motion.h1
+            style={{ y: nameY }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.7 }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tight leading-none mb-5"
+          >
+            DILAN{' '}
+            <span className="bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
+              MADUSANKA
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-300/90 uppercase tracking-[0.35em] mb-10"
+          >
+            Software Engineer
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.6 }}
+            className="flex items-center justify-center gap-4 mb-14"
+          >
+            {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2.5 px-6 py-3 rounded-full border border-white/10 bg-white/5 text-slate-300 hover:text-white hover:border-primary/50 hover:bg-primary/20 backdrop-blur-sm transition-all duration-300"
+              >
+                <Icon size={18} className="group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-semibold tracking-wide">{label}</span>
+              </a>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55, duration: 0.6 }}
+            className="w-full max-w-2xl h-px bg-gradient-to-r from-transparent via-white/15 to-transparent mb-10"
+          />
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.65, duration: 0.6 }}
+            className="text-base md:text-lg text-slate-400 leading-relaxed max-w-2xl mb-10"
+          >
+            Full-stack engineer building scalable SaaS platforms, real-time systems, and
+            production-grade APIs — focused on performance, security, and clean architecture.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75, duration: 0.5 }}
+            className="flex flex-wrap items-center justify-center gap-3 mb-6"
+          >
+            {['ASP.NET Core', 'Next.js', 'Laravel', 'FastAPI', 'PostgreSQL', 'AWS'].map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 text-xs font-medium rounded-md border border-white/8 bg-white/5 text-slate-400"
+              >
+                {tech}
+              </span>
+            ))}
+          </motion.div>
+
+          <motion.a
+            href="#contact"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.85, duration: 0.5 }}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary hover:bg-primary-light text-white font-bold shadow-lg shadow-primary/30 transition-colors"
+          >
+            Let&apos;s Talk <ArrowRight size={18} />
+          </motion.a>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+        <motion.a
+          href="#experience"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 hover:text-blue-300 transition-colors"
+          aria-label="Scroll to experience"
         >
-          <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white dark:border-darkCard">
-            <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-              alt="Developer workspace" 
-              className="w-full h-auto"
-            />
-          </div>
-          {/* Experience Float Card */}
-          {/* <div className="absolute -bottom-6 -left-6 glass p-6 rounded-2xl shadow-xl z-20 hidden lg:block">
-            <div className="text-3xl font-bold text-primary">5+</div>
-            <div className="text-sm font-semibold opacity-80">Years Experience</div>
-          </div> */}
-          {/* Projects Float Card */}
-          {/* <div className="absolute -top-6 -right-6 glass p-6 rounded-2xl shadow-xl z-20 hidden lg:block">
-            <div className="text-3xl font-bold text-primary">40+</div>
-            <div className="text-sm font-semibold opacity-80">Projects Completed</div>
-          </div> */}
-        </motion.div>
+          <span className="text-[10px] uppercase tracking-[0.25em] font-medium">Explore</span>
+          <ChevronDown size={20} className="animate-bounce" />
+        </motion.a>
       </div>
     </section>
   );
