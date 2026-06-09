@@ -6,7 +6,7 @@ const careerTrajectory = [
     period: 'Apr 2026 — Present',
     title: 'Software Engineer Consultant',
     description:
-      'Leading full-stack development and architectural decisions across multi-tenant healthcare SaaS platforms. Driving production reliability, secure API design, and scalable system integrations across flagship products.',
+      'Leading full-stack development and architectural decisions across multi-tenant healthcare SaaS platforms. Driving production reliability, secure API design, Sever Monitoring and scalable system integrations across flagship products.',
     tags: [],
     isCurrent: true,
   },
@@ -22,7 +22,7 @@ const careerTrajectory = [
     period: 'Apr 2025 — Oct 2025',
     title: 'Software Engineer Intern',
     description:
-      'Designed and maintained production infrastructure for healthcare SaaS workloads. Conducted performance monitoring, load testing, and implemented CDN, security hardening, and observability pipelines.',
+      'Contributed to production software development across backend, full-stack, and performance optimization workstreams using modern frameworks.\n\n• Built REST APIs using FastAPI to bridge LLM-based AI models with frontend applications, leveraging Celery and Redis for asynchronous processing.\n• Restructured a Laravel backend with OAuth authentication and email notification workflows to support a React-based CMS.\n• Improved Largest Contentful Paint (LCP) and Core Web Vitals on high-traffic websites through automated image optimization and asset minification.',
     tags: [],
     isCurrent: false,
   },
