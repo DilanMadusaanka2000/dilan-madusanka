@@ -34,22 +34,30 @@ const caseStudies = [
     category: 'Backend & Full-Stack',
     title: 'Multi-Tenant SaaS Healthcare Platform',
     image: '/img/industry/backend.png',
-    tags: ['ASP.NET', 'PostgreSQL', 'Next.js', 'JWT'],
+    tags: [],
     summary:
-      'Developed a centralized multi-tenant backend with 300+ APIs and a full administrative dashboard ecosystem.',
+      'Architected and maintained a centralized multi-tenant SaaS backend serving 10+ healthcare applications with 300+ APIs and secure tenant isolation.',
     projects: [
       {
         role: 'Back End Developer',
         subtitle: 'Multi-Tenant SaaS Healthcare Platform',
         techStack: [],
         achievements: [
-          'Developed a centralized multi-tenant SaaS backend serving 10 integrated applications with strict tenant isolation and secure data access.',
-          'Developed 300+ RESTful API endpoints for clinical management, secured using JWT authentication, refresh token rotation, and role-based access control.',
-          'Developed a relational database architecture with 70+ tables and strategic indexing to ensure high-performance healthcare record handling.',
-          'Developed third-party subscription management integration for automated global billing and tax compliance.',
-          'Developed geolocation and route mapping integration for distance-based clinic search and optimized appointment planning.',
-          'Developed asynchronous background services and webhook integrations to automate clinical workflows, reducing manual administrative effort by 40%.',
-          'Developed security layers applying OWASP and HIPAA best practices, including data encryption and injection attack prevention.',
+          'Architected and maintained a centralized multi-tenant SaaS backend serving 10+ healthcare applications with strict tenant isolation and secure data access.',
+          'Designed scalable backend solutions and technical architectures to support business growth and platform expansion.',
+          'Developed and maintained 300+ REST APIs using ASP.NET Core, JWT authentication, refresh tokens, and RBAC authorization.',
+          'Designed and optimized PostgreSQL databases with 70+ tables, indexing strategies, query optimization, and performance tuning.',
+          'Built asynchronous background processing systems, event-driven workflows, and webhook-based automation for clinical workflows and partner integrations.',
+          'Integrated third-party services including Lemon Squeezy, payment systems, Google Maps APIs, and external healthcare platforms.',
+          'Implemented caching strategies using Redis to improve API performance and reduce database load.',
+          'Applied secure software development practices following OWASP guidelines and HIPAA compliance requirements.',
+          'Led technical discussions and collaborated with stakeholders to translate business requirements into scalable technical solutions.',
+          'Conducted code reviews, enforced coding standards, and mentored junior developers on backend best practices.',
+          'Identified and resolved performance bottlenecks through monitoring, profiling, and database optimization techniques.',
+          'Designed fault-tolerant and maintainable systems using clean architecture, dependency injection, and modular design principles.',
+          'Leveraged AI-assisted development tools to accelerate implementation, testing, debugging, and documentation workflows.',
+          'Contributed to CI/CD pipelines, deployment automation, and production support activities.',
+          'Evaluated technical risks, proposed mitigation strategies, and ensured timely delivery of high-quality software solutions.',
         ],
       },
     ],
@@ -59,7 +67,7 @@ const caseStudies = [
     category: 'Full-Stack Development',
     title: 'SaaS Administrative Ecosystem',
     image: '/img/industry/admin.png',
-    tags: ['Admin', 'React', 'Security', 'Monitoring'],
+    tags: [],
     summary:
       'Developed a comprehensive SaaS administrative dashboard for complex healthcare operations and secure platform management.',
     projects: [
@@ -82,7 +90,7 @@ const caseStudies = [
     category: 'Full-Stack Development',
     title: 'Real-time Affiliate & Partner Management',
     image: '/img/industry/partner.png',
-    tags: ['Vue.js', 'SignalR', 'Webhooks', 'Pinia'],
+    tags: [],
     summary:
       'Developed a partner ecosystem with real-time revenue tracking and webhook-driven financial updates.',
     projects: [
@@ -103,7 +111,7 @@ const caseStudies = [
     category: 'Full-Stack Development',
     title: 'Doctor Webpage & Booking System',
     image: '/img/industry/doctorWebPage.png',
-    tags: ['Multi-Tenant', 'SEO', 'Event-Driven'],
+    tags: [],
     summary:
       'Developed auto-generated doctor pages, concurrency-safe booking, and indexed discovery at scale.',
     projects: [
@@ -111,7 +119,7 @@ const caseStudies = [
         role: 'Full-Stack Developer',
         subtitle: 'Doctor Webpage & Booking System',
         project: 'Full-Stack System Design',
-        techStack: ['Multi-Tenant', 'SEO', 'Event-Driven', 'Full-Text Search'],
+        techStack: [],
         achievements: [
           'Developed auto-generated public webpages per doctor upon registration, with unique SEO-friendly URLs requiring zero manual setup.',
           'Developed multi-tenant architecture supporting thousands of isolated doctor pages under a unified domain with strict per-tenant data boundaries.',
@@ -129,14 +137,14 @@ const caseStudies = [
     category: 'Full-Stack Development',
     title: 'eMed Blogging Platform',
     image: '/img/industry/emed-bloging.png',
-    tags: ['Next.js', 'SSR', 'ISR', 'SEO'],
+    tags: [],
     summary:
       'Developed a high-performance medical blogging platform with advanced SEO and Core Web Vitals optimization.',
     projects: [
       {
         role: 'Full-Stack Developer',
         subtitle: 'eMed Blogging Platform',
-        techStack: ['Next.js', 'Zustand', 'SSR', 'ISR'],
+        techStack: [],
         achievements: [
           'Developed a high-performance medical blogging platform leveraging server-side rendering, static generation, and dynamic routing for optimal scalability and SEO.',
           'Developed lightweight and scalable global state handling, improving state efficiency and reducing unnecessary re-renders.',
@@ -161,7 +169,7 @@ const caseStudies = [
       {
         role: 'Support Project',
         subtitle: 'AI-Powered Smart Content Platform',
-        techStack: ['APIs', 'Frontend', 'FastAPI', 'Next.js', 'Celery', 'Redis'],
+        techStack: [],
         achievements: [
           'Developed high-performance REST APIs to bridge communication between LLM-based AI models and the frontend.',
           'Developed an asynchronous task queue system to handle long-running AI operations without blocking user requests.',
@@ -183,7 +191,7 @@ const caseStudies = [
       {
         role: 'Support Project',
         subtitle: 'Laravel-based React CMS & Authentication',
-        techStack: ['Laravel', 'React', 'OAuth', 'Authentication'],
+        techStack: [],
         achievements: [
           'Developed secure user registration and login authentication for a modern React-based CMS.',
           'Developed OAuth-based authentication integration connecting the Laravel backend with the React frontend.',
