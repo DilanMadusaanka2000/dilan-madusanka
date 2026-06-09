@@ -147,7 +147,7 @@ const Hero = () => {
             transition={{ delay: 0.75, duration: 0.5 }}
             className="flex flex-wrap items-center justify-center gap-3 mb-6"
           >
-            {['ASP.NET Core', 'Next.js', 'Laravel', 'FastAPI', 'PostgreSQL', 'AWS'].map((tech) => (
+            {['ASP.NET Core', 'Next.js', 'React','Vue.js','Angular', 'Laravel', 'FastAPI','Flutter', 'PostgreSQL','MongoDB', 'AWS'].map((tech) => (
               <span
                 key={tech}
                 className="px-3 py-1 text-xs font-medium rounded-md border border-white/8 bg-white/5 text-slate-400"
