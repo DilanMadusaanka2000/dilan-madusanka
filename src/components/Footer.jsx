@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer py-12 border-t border-slate-200 dark:border-slate-800">
+    <footer className="footer py-12 border-t border-slate-800/80">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
@@ -19,10 +19,10 @@ const Footer = () => {
 
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-6 mb-6">
-              <a href="https://github.com/DilanMadusaanka2000" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all">
+              <a href="https://github.com/DilanMadusaanka2000" className="p-3 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all">
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/dilan-madusanka-694714219/" className="p-3 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.linkedin.com/in/dilan-madusanka-694714219/" className="p-3 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all">
                 <Linkedin size={20} />
               </a>
 

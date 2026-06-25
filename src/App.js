@@ -6,9 +6,9 @@ import ExperienceDetail from './components/ExperienceDetail';
 import CaseStudies from './components/CaseStudies';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AllProjects from './pages/AllProjects';
+import Contact from './components/Contact';
 
 function App() {
   return (

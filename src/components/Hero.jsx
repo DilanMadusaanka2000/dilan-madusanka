@@ -141,33 +141,7 @@ const Hero = () => {
             production-grade APIs — focused on performance, security, and clean architecture.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.75, duration: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-3 mb-6"
-          >
-            {['ASP.NET Core', 'Next.js', 'React','Vue.js','Angular', 'Laravel', 'FastAPI','Flutter', 'PostgreSQL','MongoDB', 'AWS'].map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 text-xs font-medium rounded-md border border-white/8 bg-white/5 text-slate-400"
-              >
-                {tech}
-              </span>
-            ))}
-          </motion.div>
 
-          <motion.a
-            href="#contact"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85, duration: 0.5 }}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary hover:bg-primary-light text-white font-bold shadow-lg shadow-primary/30 transition-colors"
-          >
-            Let&apos;s Talk <ArrowRight size={18} />
-          </motion.a>
         </motion.div>
 
         <motion.a

@@ -22,7 +22,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 bg-transparent ${isScrolled ? 'py-3' : 'py-5'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a
           href="#home"
