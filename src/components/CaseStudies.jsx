@@ -45,7 +45,7 @@ const caseStudies = [
         achievements: [
           'Architected and maintained a centralized multi-tenant SaaS backend serving 10+ healthcare applications with strict tenant isolation and secure data access.',
           'Designed scalable backend solutions and technical architectures to support business growth and platform expansion.',
-          'Developed and maintained 300+ REST APIs using ASP.NET Core, JWT authentication, refresh tokens, and RBAC authorization.',
+          'Developed and maintained 300+ REST APIs, JWT authentication, refresh tokens, and RBAC authorization.',
           'Designed and optimized PostgreSQL databases with 70+ tables, indexing strategies, query optimization, and performance tuning.',
           'Built asynchronous background processing systems, event-driven workflows, and webhook-based automation for clinical workflows and partner integrations.',
           'Integrated third-party services including Lemon Squeezy, payment systems, Google Maps APIs, and external healthcare platforms.',
